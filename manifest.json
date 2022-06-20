@@ -1,6 +1,6 @@
 {
     "name": "Pysal Access Example",
-    "container": "python",
+    "container": "cybergisx-0.4",
     "pre_processing_stage": "bash install_access.sh",
     "execution_stage": "python ChicagoAccess.py",
     "post_processing_stage": "ls",
