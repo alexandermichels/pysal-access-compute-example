@@ -7,9 +7,13 @@
 import pandas as pd
 import geopandas as gpd
 from access import Access, weights, Datasets
+import os
 
 
 # In[2]:
+
+RESULTS_FOLDER = os.getenv('result_folder')
+print(f"The results folder is: {RESULTS_FOLDER}")
 
 print("Hit the beginning of ChicagoAccess.py")
 # Datasets.available_datasets()
@@ -86,7 +90,7 @@ A.access_df.head()
 # In[10]:
 
 
-A.access_df.to_csv("access_result.csv")
+A.access_df.to_csv(os.path.join(RESULTS_FOLDER, "access_result.csv"))
 print("Saved result to access_result.csv")
 
 
