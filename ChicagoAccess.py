@@ -11,7 +11,7 @@ from access import Access, weights, Datasets
 
 # In[2]:
 
-
+print("Hit the beginning of ChicagoAccess.py")
 # Datasets.available_datasets()
 
 
@@ -31,7 +31,7 @@ chi_doc = Datasets.load_data("chi_doc_geom")
 
 
 chi_times = Datasets.load_data('chi_times')
-
+print("All data loaded successfully")
 
 # In[6]:
 
@@ -50,7 +50,7 @@ A = Access(demand_df            = chicago_pop,
            neighbor_cost_origin = 'origin',
            neighbor_cost_dest   = 'dest',
            neighbor_cost_name   = 'cost')
-
+print("Access object created")
 
 # In[7]:
 
@@ -60,10 +60,9 @@ fn60 = weights.step_fn({20 : 1, 40 : 0.68, 60 : 0.22})
 gaussian = weights.gaussian(20)
 gravity = weights.gravity(scale = 60, alpha = -1)
 
-
 # In[8]:
 
-
+print("Beginning Accessibility calculations")
 A.weighted_catchment    (name = "gravity",  weight_fn = gravity)
 A.fca_ratio             (name = "fca",      max_cost = 15)
 A.fca_ratio             (name = "fca",      max_cost = 30) # Note - the warning -- good!
@@ -76,7 +75,7 @@ A.enhanced_two_stage_fca(name = "g2sfca",   weight_fn = gaussian)
 A.three_stage_fca       (name = "3sfca")
 A.raam(name = "raam", tau = 60)
 A.raam(name = "raam30", tau = 30)
-
+print("Accessibility calculations finished")
 
 # In[9]:
 
