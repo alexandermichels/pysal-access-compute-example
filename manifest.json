@@ -3,11 +3,12 @@
     "container": "python",
     "pre_processing_stage": "bash install_access.sh",
     "execution_stage": "python ChicagoAccess.py",
+    "post_processing_stage": "ls",
     "slurm_input_rules": {
            "time": {
-                "max": 10,
-                "min": 5,
-                "default_value": 5,
+                "max": 30,
+                "min": 15,
+                "default_value": 20,
                 "step": 1,
                 "unit": "Minutes"   
             },
@@ -17,7 +18,7 @@
                 "default_value": 4,
                 "step": 1,
                 "unit": "GB"
-            },
+            }
     },
     "require_upload_data": false
 }
