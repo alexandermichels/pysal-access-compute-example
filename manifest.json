@@ -6,9 +6,9 @@
     "post_processing_stage": "ls",
     "slurm_input_rules": {
            "time": {
-                "max": 10,
-                "min": 5,
-                "default_value": 5,
+                "max": 30,
+                "min": 15,
+                "default_value": 20,
                 "step": 1,
                 "unit": "Minutes"   
             },
