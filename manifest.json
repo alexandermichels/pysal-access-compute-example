@@ -1,0 +1,23 @@
+{
+    "name": "Pysal Access Example",
+    "container": "python",
+    "pre_processing_stage": "bash install_access.sh",
+    "execution_stage": "python ChicagoAccess.py",
+    "slurm_input_rules": {
+           "time": {
+                "max": 10,
+                "min": 5,
+                "default_value": 5,
+                "step": 1,
+                "unit": "Minutes"   
+            },
+            "memory": {
+                "max": 4,
+                "min": 2,
+                "default_value": 4,
+                "step": 1,
+                "unit": "GB"
+            },
+    },
+    "require_upload_data": false
+}
