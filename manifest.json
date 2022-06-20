@@ -3,6 +3,7 @@
     "container": "python",
     "pre_processing_stage": "bash install_access.sh",
     "execution_stage": "python ChicagoAccess.py",
+    "post_processing_stage": "ls",
     "slurm_input_rules": {
            "time": {
                 "max": 10,
